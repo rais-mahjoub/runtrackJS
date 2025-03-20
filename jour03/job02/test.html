@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Arc-en-ciel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        .image-container {
+            display: flex;
+            gap: 10px;
+        }
+        .image-container img {
+            width: 100px;
+            height: 100px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="shuffle-button">Mélanger les images</button>
+    <div class="image-container" id="image-container">
+        <img src="./images/arc1.png" alt="Image 1" data-order="1">
+        <img src="./images/arc2.png" alt="Image 2" data-order="2">
+        <img src="./images/arc3.png" alt="Image 3" data-order="3">
+        <img src="./images/arc4.png" alt="Image 4" data-order="4">
+        <img src="./images/arc5.png" alt="Image 5" data-order="5">
+        <img src="./images/arc6.png" alt="Image 6" data-order="6">
+    </div>
+    <div class="message" id="message"></div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script>
+        // $(function() {
+            // Fonction pour mélanger les images
+            function shuffleImages() {
+                const $container = $("#image-container");
+                const $images = $container.children();
+                while ($container.length) {
+                    $container.append($images.splice(Math.floor(Math.random() * $images.length), 1)[0]);
+                }
+            }
+
+            // Fonction pour vérifier l'ordre des images
+            function checkOrder() {
+                const $images = $("#image-container img");
+                let isCorrect = true;
+                $images.each(function(index) {
+                    if ($(this).data("order") != (index + 1)) {
+                        isCorrect = false;
+                        return false;
+                    }
+                });
+                const $message = $("#message");
+                if (isCorrect) {
+                    $message.text("Vous avez gagné").css("color", "green");
+                } else {
+                    $message.text("Vous avez perdu").css("color", "red");
+                }
+            }
+
+            // Initialiser le glisser-déposer
+            $("#image-container").sortable({
+                stop: checkOrder
+            });
+
+            // Ajouter un événement au bouton pour mélanger les images
+            $("#shuffle-button").on('click', shuffleImages);
+        // });
+    </script>
+</body>
+</html>
