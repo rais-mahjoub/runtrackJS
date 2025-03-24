@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="header-title">La Plateforme_</title>
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+        <meta name="description" content="Bienvenue à la Plateforme_ !">
+        <meta name="robots" content="index, follow">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/style.css">
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet'>        
+    </head>
+    <body>
+        <header>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#navbar"><img src="./assets/laplateforme.png"
+                                alt="logo de La Plateforme_" class="logo"></a></li>
+                    <li><a href="#inscription">Inscription</a></li>
+                    <li><a href="#connexion">Connexion</a></li>
+                    <li><a href="#calendrier">Calendrier</a></li>
+                    <li><a href="#admin">Backboard (Admin)</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="inscription">
+                <h2>Inscription</h2>
+                <form>
+                    <div>
+                        <label for="prenom">Prénom&nbsp;:</label>
+                        <input type="text" id="prenom" required>
+                    </div>
+                    <div>
+                        <label for="nom">Nom&nbsp;:</label>
+                        <input type="text" id="nom" required>
+                    </div>
+                    <div>
+                        <label for="mail_inscr">Adresse mail&nbsp;:</label>
+                        <input type="email" id="mail_inscr" required>
+                    </div>
+                    <div>
+                        <label for="mail_confirm">Confirmation de l'adresse mail&nbsp;:</label>
+                        <input type="email" id="mail_confirm" required>
+                    </div>
+                    <div>
+                        <label for="mdp_inscr">Mot de passe&nbsp;:</label>
+                        <input type="password" id="mdp_inscr" required>
+                    </div>
+                    <div>
+                        <label for="mdp_confirm">Confirmation du mot de passe&nbsp;:</label>
+                        <input type="password" id="mdp_confirm" required>
+                    </div>
+                    <button id="inscr_button">S'inscrire</button>
+                </form>
+            </div>
+            <div id="connexion">
+                <h2>Connexion</h2>
+                <form>
+                    <div>
+                        <label for="main_connex">Confirmation de l'adresse mail&nbsp;:</label>
+                        <input type="email" id="mail_confirm" required>
+                    </div>
+                    <div>
+                        <label for="mdp_connex">Mot de passe&nbsp;:</label>
+                        <input type="password" id="mdp_inscr" required>
+                    </div>
+                    <button id="connex_button">Se connecter</button>
+                </form>
+            </div>
+            <div id="calendrier">
+                <h2>Calendrier</h2>
+                <p id="calCont"></p>
+                <p id="formCont"></p>
+            </div>
+            <div id="admin">
+                <h2>Backboard</h2>
+            </div>
+        </main>
+        <footer>&copy; </footer>
+        <script src="js/script.js"></script>
+        
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/fr.js'></script>
+    </body>
+</html>
